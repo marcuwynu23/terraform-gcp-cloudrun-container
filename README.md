@@ -93,8 +93,6 @@ To stay within the free tier, ensure your usage does not exceed:
 4.  **Outputs**:
     After a successful deployment, Terraform will output the Cloud Run service URL and name.
 
----
-
 ## Usage as a Module
 
 Reference this repository as a Terraform module in your own configurations:
@@ -118,8 +116,6 @@ output "cloud_run_url" {
   value = module.cloud_run.external_url
 }
 ```
-
----
 
 ## Variables
 
