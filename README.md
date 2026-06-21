@@ -119,4 +119,20 @@ output "cloud_run_url" {
 }
 ```
 
-All [variables](#variables) and [outputs](#outputs) documented below are available when using this as a module.
+---
+
+## Variables
+
+| Variable | Description | Type | Default |
+|----------|-------------|------|---------|
+| `project_id` | GCP project ID | `string` | (required) |
+| `region` | GCP region (free tier: us-central1, us-east1, us-west1) | `string` | `"us-central1"` |
+| `service_name` | Cloud Run service name | `string` | `"nginx-service"` |
+| `image_url` | Container image URL | `string` | `"nginx:latest"` |
+
+## Outputs
+
+| Output | Description |
+|--------|-------------|
+| `external_url` | External URL of the Cloud Run service |
+| `service_name` | Name of the Cloud Run service |
