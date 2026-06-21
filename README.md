@@ -92,3 +92,31 @@ To stay within the free tier, ensure your usage does not exceed:
 
 4.  **Outputs**:
     After a successful deployment, Terraform will output the Cloud Run service URL and name.
+
+---
+
+## Usage as a Module
+
+Reference this repository as a Terraform module in your own configurations:
+
+```hcl
+module "cloud_run" {
+  source = "github.com/marcuwynu23/terraform-gcp-cloudrun-container?ref=main"
+
+  project_id   = var.project_id
+  region       = "us-central1"
+  service_name = "my-api"
+  image_url    = "nginx:latest"
+}
+```
+
+Then use the outputs in your configuration:
+
+```hcl
+# Example: pass the service URL to a DNS record
+output "cloud_run_url" {
+  value = module.cloud_run.external_url
+}
+```
+
+All [variables](#variables) and [outputs](#outputs) documented below are available when using this as a module.
